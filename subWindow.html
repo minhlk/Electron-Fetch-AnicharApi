@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Add Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input class="form-control" type="text" id="item" autofocus>
+            </div>
+            <button class="btn btn-primary" type="submit">Add Item</button>
+        </form>
+    </div>
+</body>
+<script>
+    const {remote, ipcRenderer} = require('electron')
+    document.getElementsByTagName('form')[0].addEventListener('submit',(e)=>{
+        e.preventDefault()
+        let item = document.getElementById('item').value
+        ipcRenderer.send('item:add', item)
+        var window = remote.getCurrentWindow();
+        window.close();
+    })
+</script>
+</html>

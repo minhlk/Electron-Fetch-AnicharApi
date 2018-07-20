@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>List of items</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+    <div class="row">
+        <div class="col" id="detail">
+            <a href="">GOTO</a>
+        </div>
+    </div>
+        <div class="card">
+            <div class="card-header text-center">
+                List of items
+            </div>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">Egg</li>
+            <li class="list-group-item">Bread</li>
+            <li class="list-group-item">Milk</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const { ipcRenderer,url } = require('electron')
+    let ul = document.getElementsByTagName('ul')[0]
+    ipcRenderer.on('item:add', (event, arg) => {
+        let li = document.createElement('li')
+        li.className = 'list-group-item'
+        li.appendChild(document.createTextNode(arg))
+        ul.appendChild(li)
+    })
+    ipcRenderer.on('item:clear', (event, arg) => {
+        ul.remove()
+    })
+    ul.addEventListener('dblclick',function(e){
+        e.target.remove()
+    })
+    document.getElementById('detail').addEventListener('click',(e)=>{
+        e.preventDefault()
+        let path = 'file://' + __dirname + '/views/detail.com.html'
+        ipcRenderer.send('item:detail', path)
+    })
+</script>
+
+</html>

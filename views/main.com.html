@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Photon</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/photon.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    
+</head>
+
+<body>
+
+    <aside id="search" class="searchbox">
+        <!-- <h1>Search this site</h1> -->
+
+        <form id="search-form">
+            <input class="query" placeholder="Enter search keyword(s)" type="search" id="search-text" autofocus>
+        </form>
+
+        <footer>
+            <a class="close" style="color : white;"></a>
+        </footer>
+    </aside>
+
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <!-- <h1 class="title">MK Anime Information</h1> -->
+
+            <div class="toolbar-actions">
+                <div class="btn-group">
+                    <button class="btn btn-default" onclick="Home()">
+                        <span class="icon icon-home"></span>
+                    </button>
+                    <button class="btn btn-default" onclick="goPrev()">
+                        <span class="icon icon-left-open"></span>
+                    </button>
+                    <button class="btn btn-default" onclick="goNext()">
+                        <span class="icon icon-right-open"></span>
+                    </button>
+                </div>
+                <button class="btn btn-default pull-right" id="btn-search">
+                    Search</button>
+
+            </div>
+        </header>
+
+        <!-- BODY START  -->
+        <div class="window-content">
+            <div class="pane-group">
+                <!-- LEFT BAR START -->
+                <div class="pane pane-sm sidebar">
+
+                    <ul class="list-group">
+                        <!-- LIST ANIME HERE -->
+                    </ul>
+                </div>
+                <!-- LEFT BAR END -->
+                <!-- RIGHT CONTENT START -->
+                <div class="container" id="right-detail" style="margin:0; max-width : 100%; position: relative;">
+
+                </div>
+                <!-- RIGHT CONTENT END  -->
+            </div>
+        </div>
+
+        <!-- BODY END -->
+
+        <footer class="toolbar toolbar-footer">
+            <div class="toolbar-actions">
+                <!-- <script>document.write('You are running on ' + process.platform + ' platform')</script> -->
+                <!-- <button class="btn btn-default" onclick="close()">
+                    Cancel
+                </button>
+                
+                <button class="btn btn-primary pull-right">
+                    Save
+                </button> -->
+                <div class="pull-right">
+                     ❣ MK Production
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

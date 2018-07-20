@@ -1,0 +1,25 @@
+{
+  "name": "mk_manga_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --watch * --exec \"electron .\"",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds"
+  },
+  "author": "MinhLK",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^2.0.5",
+    "electron-builder": "^20.22.0",
+    "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "electron-fetch": "^1.2.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
